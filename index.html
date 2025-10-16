@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Transfer in Progress...</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #c0c0c0, #8d8d8d, #cfcfcf);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      color: #222;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .icon {
+      position: relative;
+      width: 100px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(180deg, #f4c542 0%, #e0a800 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .icon::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10px;
+      width: 80px;
+      height: 25px;
+      background: linear-gradient(180deg, #ffe066, #f4c542);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .progress-bar {
+      width: 80%;
+      height: 10px;
+      margin: 20px auto 10px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #0078d7, #00a2ed);
+      border-radius: 5px;
+      animation: loading 4s linear forwards;
+    }
+
+    .text {
+      font-size: 18px;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes loading {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    @keyframes shine {
+      from { background-position: 200% center; }
+      to { background-position: -200% center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon"></div>
+    <div class="progress-bar"><div class="progress"></div></div>
+    <div class="text">Copying files... please wait</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://cat.com";
+    }, 4000);
+  </script>
+</body>
+</html>
